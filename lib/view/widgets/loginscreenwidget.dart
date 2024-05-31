@@ -9,13 +9,13 @@ import 'package:uitask/view/widgets/utilities/appcolors.dart';
 
 class Logintextfield extends StatelessWidget {
   IconData? icons;
-  IconData? suffixicon;
-  String? labeltext;
-  Callback? suffixbutton;
+ 
+  String? hinttext;
+ 
   
   Passcontroller? controller ;
 
-  Logintextfield({super.key, this.icons, this.labeltext, this.suffixicon,this.suffixbutton,this.controller});
+  Logintextfield({super.key, this.icons, this.hinttext,this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,7 @@ class Logintextfield extends StatelessWidget {
       cursorColor: Appcolor.headlinecolor,
       obscureText: false,
       decoration: InputDecoration(
-          suffixIcon: IconButton(
-              onPressed: suffixbutton,
-              icon: Icon(suffixicon)),
+         
           enabled: true,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
@@ -38,7 +36,7 @@ class Logintextfield extends StatelessWidget {
             icons,
             color: Appcolor.secondarycolor,
           ),
-         hintText: labeltext,
+         hintText: hinttext,
           labelStyle: TextStyle(color: Appcolor.secondarycolor),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15), 

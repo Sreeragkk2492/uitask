@@ -67,7 +67,7 @@ class Welcomepage extends StatelessWidget {
               right: 20,
               child: Logintextfield(
                 icons: Icons.person_outline, 
-                labeltext: 'Username',
+                hinttext: 'Username',
               )),
           Positioned(
               top: 329,
