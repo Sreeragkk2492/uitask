@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:uitask/view/Welcomepage.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:uitask/screens/auth/login/loginpage.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(const Myapp());
 }
 
 class Myapp extends StatelessWidget {
@@ -10,9 +12,16 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Welcomepage(),
+    return ScreenUtilInit(
+      designSize: Size(411, 869), 
+      builder: (context, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false, 
+          home: Welcomepage(),
+        );
+      },
     );
+    
+     
   }
 }

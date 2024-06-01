@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:uitask/controller/passcontroller.dart';
-import 'package:uitask/view/otp.dart';
-import 'package:uitask/view/widgets/buttons.dart';
-import 'package:uitask/view/widgets/loginscreenwidget.dart';
-import 'package:uitask/view/widgets/passwordfield.dart';
-import 'package:uitask/view/widgets/utilities/appcolors.dart';
+import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/strings.dart';
+import 'package:uitask/screens/auth/controller/authcontroller.dart';
+import 'package:uitask/screens/auth/signupwithotp/signupotp.dart';
+
+import 'package:uitask/screens/auth/login/widgets/buttons.dart';
+import 'package:uitask/screens/auth/login/widgets/loginscreenwidget.dart';
+import 'package:uitask/screens/auth/login/widgets/passwordfield.dart';
+
 
 class Welcomepage extends StatelessWidget {
-  Passcontroller controller = Get.put(Passcontroller());
+final  Authcontroller controller = Get.put(Authcontroller());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Appcolor.primarycolor,
+      backgroundColor: primarycolor,
       // appBar: AppBar(backgroundColor: Appcolor.primarycolor,),
       body: Stack(
         children: [
@@ -20,11 +24,11 @@ class Welcomepage extends StatelessWidget {
               top: 32,
               left: 305,
               child: Container(
-                width: 93.32,
-                height: 149,
+                width: 93.32.w,
+                height: 149.h,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/img2.png'),
+                        image: AssetImage(kLoginsecondary), 
                         fit: BoxFit.cover)),
               )),
           Positioned(
@@ -33,16 +37,16 @@ class Welcomepage extends StatelessWidget {
               child: Text(
                 "Hello!",
                 style: TextStyle(
-                    fontSize: 44,
+                    fontSize: 44.sp,
                     fontWeight: FontWeight.w900,
-                    color: Appcolor.secondarycolor),
+                    color: secondarycolor),
               )),
           Positioned(
               top: 159,
               left: 30,
               child: Text(
                 'Welcome Back :)',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
               )),
           Positioned(
               top: 181,
@@ -50,7 +54,7 @@ class Welcomepage extends StatelessWidget {
               child: Text(
                 'Please login to your account',
                 style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w500,
                     color: Colors.grey),
               )),
@@ -59,14 +63,14 @@ class Welcomepage extends StatelessWidget {
               left: 35,
               child: Text(
                 'Username',
-                style: TextStyle(color: Appcolor.headlinecolor),
+                style: TextStyle(color: headlinecolor),
               )),
           Positioned(
               top: 258,
               left: 20,
               right: 20,
               child: Logintextfield(
-                icons: Icons.person_outline, 
+                icons: Icons.person_outline,
                 hinttext: 'Username',
               )),
           Positioned(
@@ -74,15 +78,16 @@ class Welcomepage extends StatelessWidget {
               left: 35,
               child: Text(
                 'Password',
-                style: TextStyle(color: Appcolor.headlinecolor),
+                style: TextStyle(color: headlinecolor),
               )),
           Positioned(
               top: 352,
               left: 20,
               right: 20,
-              child:Passwordfield(
+              child: Passwordfield(
+                Text: 'Password',
                 sufficicon: true,
-              ) ),
+              )),
           Positioned(
               top: 439,
               left: 219,
@@ -92,8 +97,8 @@ class Welcomepage extends StatelessWidget {
                     'Forgot Password?',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: Appcolor.secondarycolor),
+                        fontSize: 16.sp,
+                        color: secondarycolor),
                   ))),
           Positioned(
               top: 493,
@@ -103,7 +108,7 @@ class Welcomepage extends StatelessWidget {
               )),
           Positioned(
               top: 662,
-              left: 99, 
+              left: 99,
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -111,20 +116,19 @@ class Welcomepage extends StatelessWidget {
                   Text(
                     'Dont have an account?',
                     style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w400,
-                        color: Appcolor.headlinecolor),
+                        color: headlinecolor),
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Otppage()));
+                        Get.to(()=>SignupWithOtp());
                       },
                       child: Text(
                         'SignUp',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 13,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.bold),
                       ))
                 ],
@@ -133,11 +137,11 @@ class Welcomepage extends StatelessWidget {
               top: 668,
               left: -0.64,
               child: Container(
-                width: 82.64,
-                height: 118,
+                width: 82.64.w,
+                height: 118.h,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/img.jpg'),
+                        image: AssetImage(kLoginPrimary), 
                         fit: BoxFit.cover)),
               ))
         ],
