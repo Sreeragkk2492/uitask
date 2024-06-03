@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 import 'package:uitask/core/constants/strings.dart';
-import 'package:uitask/screens/auth/controller/authcontroller.dart';
-import 'package:uitask/screens/auth/signupwithotp/signupotp.dart';
+import 'package:uitask/core/widgets/custom_passwordfield.dart';
+import 'package:uitask/core/widgets/custom_textfield.dart';
+import 'package:uitask/screens/auth/controller/auth_controller.dart';
+import 'package:uitask/screens/auth/signupwithotp/signup_otp_screen.dart';
 
-import 'package:uitask/screens/auth/login/widgets/buttons.dart';
-import 'package:uitask/screens/auth/login/widgets/loginscreenwidget.dart';
-import 'package:uitask/screens/auth/login/widgets/passwordfield.dart';
+import 'package:uitask/screens/auth/login/widgets/login_screen_button.dart';
 
 
-class Welcomepage extends StatelessWidget {
-final  Authcontroller controller = Get.put(Authcontroller());
+class LoginScreen extends StatelessWidget {
+  final Authcontroller controller = Get.put(Authcontroller());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,8 +28,7 @@ final  Authcontroller controller = Get.put(Authcontroller());
                 height: 149.h,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(kLoginsecondary), 
-                        fit: BoxFit.cover)),
+                        image: AssetImage(kLoginsecondary), fit: BoxFit.cover)),
               )),
           Positioned(
               top: 109,
@@ -69,9 +68,12 @@ final  Authcontroller controller = Get.put(Authcontroller());
               top: 258,
               left: 20,
               right: 20,
-              child: Logintextfield(
-                icons: Icons.person_outline,
-                hinttext: 'Username',
+              child: CustomTextfield(
+                hintText: 'Username',
+                prefixIcons: Icon(
+                  Icons.person_outline,
+                  color: secondarycolor,
+                ),
               )),
           Positioned(
               top: 329,
@@ -84,10 +86,25 @@ final  Authcontroller controller = Get.put(Authcontroller());
               top: 352,
               left: 20,
               right: 20,
-              child: Passwordfield(
-                Text: 'Password',
-                sufficicon: true,
-              )),
+              child: Obx(() {
+                return CustomPasswordfield(
+                  prefixIcon: Icon(
+                    Icons.shield_outlined,
+                    color: secondarycolor,
+                  ),
+                  obscureText: !controller.isLoginPasswordvisible.value,
+                  hintText: 'Password',
+                  suffixbutton: IconButton(
+                    onPressed: () {
+                      controller.displaypassword();
+                    },
+                    icon: Icon(controller.isLoginPasswordvisible.value
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    color: secondarycolor,
+                  ),
+                );
+              })),
           Positioned(
               top: 439,
               left: 219,
@@ -103,7 +120,7 @@ final  Authcontroller controller = Get.put(Authcontroller());
           Positioned(
               top: 493,
               left: 28,
-              child: Buttons(
+              child: LoginScreenButtons( 
                 title: 'Login',
               )),
           Positioned(
@@ -122,7 +139,7 @@ final  Authcontroller controller = Get.put(Authcontroller());
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.to(()=>SignupWithOtp());
+                        Get.to(() => SignupWithOtpScreen());
                       },
                       child: Text(
                         'SignUp',
@@ -137,12 +154,11 @@ final  Authcontroller controller = Get.put(Authcontroller());
               top: 668,
               left: -0.64,
               child: Container(
-                width: 82.64.w,
+                width: 82.64.h,
                 height: 118.h,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(kLoginPrimary), 
-                        fit: BoxFit.cover)),
+                        image: AssetImage(kLoginPrimary), fit: BoxFit.cover)),
               ))
         ],
       ),

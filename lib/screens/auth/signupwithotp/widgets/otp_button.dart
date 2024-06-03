@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 
 class OtpButton extends StatelessWidget {
 final  String title;

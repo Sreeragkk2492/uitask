@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 
-class Buttons extends StatelessWidget {
+class LoginScreenButtons extends StatelessWidget {
  final String  title;
-   Buttons({super.key,required this.title});
+   LoginScreenButtons({super.key,required this.title});
 
   @override
   Widget build(BuildContext context) {

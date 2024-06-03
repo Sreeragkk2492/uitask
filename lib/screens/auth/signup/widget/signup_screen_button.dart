@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 
-class Signpagebutton extends StatelessWidget {
-  const Signpagebutton({super.key});
+class SignScreenButton extends StatelessWidget {
+  const SignScreenButton({super.key});
 
   @override
   Widget build(BuildContext context) {

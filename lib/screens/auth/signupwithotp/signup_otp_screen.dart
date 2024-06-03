@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 import 'package:uitask/core/constants/widgets.dart';
-import 'package:uitask/screens/auth/signupwithotp/widgets/buttons.dart';
-import 'package:uitask/screens/auth/signupwithotp/widgets/dropdownwidget.dart';
-import 'package:uitask/screens/auth/signupwithotp/widgets/otpField.dart';
-import 'package:uitask/screens/auth/signupwithotp/widgets/otptextfield.dart';
-import 'package:uitask/screens/auth/signup/signup.dart';
+import 'package:uitask/core/widgets/custom_dropdown.dart';
+import 'package:uitask/core/widgets/custom_otpfield.dart';
+import 'package:uitask/screens/auth/signupwithotp/widgets/otp_button.dart';
+import 'package:uitask/screens/auth/signupwithotp/widgets/otp_textfield.dart';
+import 'package:uitask/screens/auth/signup/signup_screen.dart';
 
-class SignupWithOtp extends StatefulWidget {
+class SignupWithOtpScreen extends StatefulWidget {
   @override
-  State<SignupWithOtp> createState() => _SignupWithOtpState();
+  State<SignupWithOtpScreen> createState() => _SignupWithOtpState();
 }
 
-class _SignupWithOtpState extends State<SignupWithOtp> {
+class _SignupWithOtpState extends State<SignupWithOtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class _SignupWithOtpState extends State<SignupWithOtp> {
                           fontWeight: FontWeight.w400,
                           color: headlinecolor),
                     ),
-                    Dropdownwidget(),
+                    CustomDropdownwidget(),
                   ],
                 ),
                 kWidth20,
@@ -51,7 +51,7 @@ class _SignupWithOtpState extends State<SignupWithOtp> {
                           fontWeight: FontWeight.w400,
                           color: headlinecolor),
                     ),
-                    Textfieldwidget(),
+                    OtpTextfieldwidget(), 
                   ],
                 )
               ],
@@ -77,7 +77,7 @@ class _SignupWithOtpState extends State<SignupWithOtp> {
                             color: headlinecolor),
                       ),
                       kHeight20,
-                      OtpField()
+                      CustomOtpField(),
                     ],
                   ),
                 )
@@ -86,7 +86,7 @@ class _SignupWithOtpState extends State<SignupWithOtp> {
             kHeight50,
             OtpButton(
               ontap: () {
-                Get.to(()=>SignUpPage());
+                Get.to(()=>SignUpScreen());
               },
               title: 'Signup',
             )

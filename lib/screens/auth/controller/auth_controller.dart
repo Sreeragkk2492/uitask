@@ -13,7 +13,7 @@ class Authcontroller extends GetxController{
     isConfirmPassvisible.value=!isConfirmPassvisible.value; 
   }
 
-  void displaypassword(){
+  void displaypassword(){ 
     isLoginPasswordvisible.value=!isLoginPasswordvisible.value;
   }
 }

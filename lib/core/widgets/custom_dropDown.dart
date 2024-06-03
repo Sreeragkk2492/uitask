@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 
-class Dropdownwidget extends StatefulWidget {
+class CustomDropdownwidget extends StatefulWidget {
   @override
-  State<Dropdownwidget> createState() => _DropdownwidgetState();
+  State<CustomDropdownwidget> createState() => _DropdownwidgetState();
 }
 
-class _DropdownwidgetState extends State<Dropdownwidget> {
+class _DropdownwidgetState extends State<CustomDropdownwidget> {
  final List<String> list = <String>['+91', '+1', '+63'];
 
   @override
@@ -18,7 +18,7 @@ class _DropdownwidgetState extends State<Dropdownwidget> {
       height: 47.h,
       child: TextField(
         decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: secondarycolor)),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: secondarycolor)),

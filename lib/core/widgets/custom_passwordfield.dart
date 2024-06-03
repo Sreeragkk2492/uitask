@@ -3,36 +3,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
-import 'package:uitask/screens/auth/controller/authcontroller.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
+import 'package:uitask/screens/auth/controller/auth_controller.dart';
 
-class Passwordfield extends StatelessWidget {
+class CustomPasswordfield extends StatelessWidget {
   //IconData?icons;
   // IconData?suffixicon;
- final Callback? suffixbutton;
- final String? Text;
+ final Widget? suffixbutton;
+ 
+ final String? hintText;
   final bool sufficicon;
-  Passwordfield(
-      {super.key, this.Text, this.suffixbutton, this.sufficicon = true});
+  final bool obscureText;
+  final Widget? prefixIcon;
+  CustomPasswordfield(
+      {super.key, this.hintText, this.suffixbutton, this.sufficicon = true, required this.obscureText,this.prefixIcon});
  final Authcontroller controller = Get.put(Authcontroller());
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
+    
       return TextField(
         cursorColor: headlinecolor,
-        obscureText: !controller.isLoginPasswordvisible.value,
+        obscureText: obscureText,
         decoration: InputDecoration(
-            hintText: Text,
-            suffixIcon: sufficicon
-                ? IconButton(
-                    onPressed: () {
-                      controller.displaypassword();
-                    },
-                    icon: Icon(controller.isLoginPasswordvisible.value
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined))
-                : null,
+            hintText: hintText,
+            hintStyle: TextStyle(color: secondarycolor), 
+            suffixIcon: suffixbutton,
             enabled: true,
             enabledBorder: OutlineInputBorder(
               
@@ -42,16 +37,13 @@ class Passwordfield extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(color: secondarycolor,)),
-            prefixIcon: Icon(
-              Icons.shield_outlined, 
-              color: secondarycolor,
-            ),
-            labelText: Text,
+            prefixIcon: prefixIcon,
+            
             labelStyle: TextStyle(color: secondarycolor),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(color: secondarycolor,))),
       );
-    });
+    
   }
 }

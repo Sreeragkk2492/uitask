@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 
-class OtpField extends StatelessWidget {
-  const OtpField({super.key});
+class CustomOtpField extends StatelessWidget {
+  const CustomOtpField({super.key});
 
   @override
   Widget build(BuildContext context) {

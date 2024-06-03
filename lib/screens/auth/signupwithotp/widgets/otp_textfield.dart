@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uitask/core/constants/appcolors.dart';
+import 'package:uitask/core/constants/colors.dart';
 
-class Textfieldwidget extends StatelessWidget {
-  const Textfieldwidget({super.key});
+class OtpTextfieldwidget extends StatelessWidget {
+  const OtpTextfieldwidget({super.key}); 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 253.w,
+      width: 253.h, 
       height: 48.h,
       child: TextField(
         keyboardType: TextInputType.number, 
         cursorColor: headlinecolor,
         decoration: InputDecoration(
           
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: secondarycolor),
             ),
             border: OutlineInputBorder(
