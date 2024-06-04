@@ -5,6 +5,7 @@ import 'package:uitask/core/constants/colors.dart';
 import 'package:uitask/core/constants/widgets.dart';
 import 'package:uitask/core/widgets/custom_dropdown.dart';
 import 'package:uitask/core/widgets/custom_otpfield.dart';
+import 'package:uitask/routes/routes.dart';
 import 'package:uitask/screens/auth/signupwithotp/widgets/otp_button.dart';
 import 'package:uitask/screens/auth/signupwithotp/widgets/otp_textfield.dart';
 import 'package:uitask/screens/auth/signup/signup_screen.dart';
@@ -51,7 +52,7 @@ class _SignupWithOtpState extends State<SignupWithOtpScreen> {
                           fontWeight: FontWeight.w400,
                           color: headlinecolor),
                     ),
-                    OtpTextfieldwidget(), 
+                    OtpTextfieldwidget(),
                   ],
                 )
               ],
@@ -65,7 +66,7 @@ class _SignupWithOtpState extends State<SignupWithOtpScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,7 +87,7 @@ class _SignupWithOtpState extends State<SignupWithOtpScreen> {
             kHeight50,
             OtpButton(
               ontap: () {
-                Get.to(()=>SignUpScreen());
+                Get.toNamed(Routes.SIGNUP);
               },
               title: 'Signup',
             )

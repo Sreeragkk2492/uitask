@@ -13,7 +13,7 @@ final  Callback? ontap;
     return  GestureDetector(
       onTap:ontap ,
       child: Container(
-                width: 339.w,
+                width: 320.w,
                 height: 48.h,
                 decoration: BoxDecoration(
                     color: secondarycolor,

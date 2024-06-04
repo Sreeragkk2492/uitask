@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uitask/core/constants/colors.dart';
+import 'package:uitask/core/constants/country_code.dart';
 
 class CustomDropdownwidget extends StatefulWidget {
   @override
@@ -8,54 +9,46 @@ class CustomDropdownwidget extends StatefulWidget {
 }
 
 class _DropdownwidgetState extends State<CustomDropdownwidget> {
- final List<String> list = <String>['+91', '+1', '+63'];
-
   @override
   Widget build(BuildContext context) {
-   String dropdownvalue = list.first;
+    String dropdownvalue = list.first;
     return Container(
-      width: 77.w,
-      height: 47.h,
-      child: TextField(
-        decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: secondarycolor)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: secondarycolor)),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: secondarycolor)),
-            suffixIcon: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: DropdownButton(
-                iconEnabledColor: secondarycolor, 
-                isDense: true,
-                isExpanded: true,
-                elevation: 0,
-                padding: EdgeInsets.all(2),
-                focusColor: Colors.transparent,
-                // dropdownColor: Colors.transparent,
-                value: dropdownvalue,
-                items: list.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Center(
-                        child: Text(
-                      value,
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                          color: headlinecolor),
-                    )),
-                  );
-                }).toList(),
-                onChanged: (String? value) {
-                  // This is called when the user selects an item.
-                  setState(() {
-                    dropdownvalue = value!;
-                  });
-                },
-              ),
+      width: 60.w,
+      height: 48.h,
+      decoration: ShapeDecoration(
+          shape: RoundedRectangleBorder(
+              side: BorderSide(color: secondarycolor),
+              borderRadius: BorderRadius.circular(10.r))),
+      child: DropdownButton(
+        underline: SizedBox(),
+        iconEnabledColor: secondarycolor,
+        isDense: true,
+        isExpanded: true,
+        elevation: 0,
+
+        padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 5.w),
+        focusColor: Colors.transparent,
+        // dropdownColor: Colors.transparent,
+        value: dropdownvalue,
+        items: list.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
+                  color: headlinecolor),
             )),
+          );
+        }).toList(),
+        onChanged: (String? value) {
+          // This is called when the user selects an item.
+          setState(() {
+            dropdownvalue = value!;
+          });
+        },
       ),
     );
   }

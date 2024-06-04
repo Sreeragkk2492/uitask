@@ -9,7 +9,7 @@ class LoginScreenButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 345.w,
+        width: 305.h, 
         height: 48.h,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.r),

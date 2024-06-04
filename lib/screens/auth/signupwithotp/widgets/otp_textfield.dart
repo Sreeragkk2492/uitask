@@ -8,14 +8,14 @@ class OtpTextfieldwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 253.h, 
+      width: 220.w,  
       height: 48.h,
       child: TextField(
         keyboardType: TextInputType.number, 
         cursorColor: headlinecolor,
         decoration: InputDecoration(
           
-            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide(color: secondarycolor),
             ),
             border: OutlineInputBorder(

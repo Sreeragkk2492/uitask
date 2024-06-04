@@ -2,13 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:uitask/core/constants/colors.dart';
-import 'package:uitask/screens/auth/controller/auth_controller.dart';
 
 class CustomPasswordfield extends StatelessWidget {
-  //IconData?icons;
-  // IconData?suffixicon;
+ 
  final Widget? suffixbutton;
  
  final String? hintText;
@@ -17,7 +14,7 @@ class CustomPasswordfield extends StatelessWidget {
   final Widget? prefixIcon;
   CustomPasswordfield(
       {super.key, this.hintText, this.suffixbutton, this.sufficicon = true, required this.obscureText,this.prefixIcon});
- final Authcontroller controller = Get.put(Authcontroller());
+
   @override
   Widget build(BuildContext context) {
     
@@ -33,7 +30,7 @@ class CustomPasswordfield extends StatelessWidget {
               
                 borderRadius: BorderRadius.circular(15.r), 
                 borderSide: BorderSide(color: secondarycolor)),
-            // disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Appcolor.secondarycolor)),
+        
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(color: secondarycolor,)),

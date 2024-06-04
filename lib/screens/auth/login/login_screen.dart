@@ -5,14 +5,14 @@ import 'package:uitask/core/constants/colors.dart';
 import 'package:uitask/core/constants/strings.dart';
 import 'package:uitask/core/widgets/custom_passwordfield.dart';
 import 'package:uitask/core/widgets/custom_textfield.dart';
+import 'package:uitask/routes/routes.dart';
 import 'package:uitask/screens/auth/controller/auth_controller.dart';
 import 'package:uitask/screens/auth/signupwithotp/signup_otp_screen.dart';
 
 import 'package:uitask/screens/auth/login/widgets/login_screen_button.dart';
 
-
 class LoginScreen extends StatelessWidget {
-  final Authcontroller controller = Get.put(Authcontroller());
+  final controller = Get.put(Authcontroller());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,18 +21,18 @@ class LoginScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-              top: 32,
-              left: 305,
+              top: 32.h,
+              left: 270.w,
               child: Container(
                 width: 93.32.w,
                 height: 149.h,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(kLoginsecondary), fit: BoxFit.cover)),
               )),
           Positioned(
-              top: 109,
-              left: 30,
+              top: 109.h,
+              left: 30.w,
               child: Text(
                 "Hello!",
                 style: TextStyle(
@@ -41,15 +41,15 @@ class LoginScreen extends StatelessWidget {
                     color: secondarycolor),
               )),
           Positioned(
-              top: 159,
-              left: 30,
+              top: 165.h,
+              left: 30.w,
               child: Text(
                 'Welcome Back :)',
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
               )),
           Positioned(
-              top: 181,
-              left: 30,
+              top: 189.h,
+              left: 30.w,
               child: Text(
                 'Please login to your account',
                 style: TextStyle(
@@ -58,16 +58,16 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.grey),
               )),
           Positioned(
-              top: 235,
-              left: 35,
+              top: 235.h,
+              left: 35.w,
               child: Text(
                 'Username',
                 style: TextStyle(color: headlinecolor),
               )),
           Positioned(
-              top: 258,
-              left: 20,
-              right: 20,
+              top: 258.h,
+              left: 20.w,
+              right: 20.w,
               child: CustomTextfield(
                 hintText: 'Username',
                 prefixIcons: Icon(
@@ -76,16 +76,16 @@ class LoginScreen extends StatelessWidget {
                 ),
               )),
           Positioned(
-              top: 329,
-              left: 35,
+              top: 329.h,
+              left: 35.w,
               child: Text(
                 'Password',
                 style: TextStyle(color: headlinecolor),
               )),
           Positioned(
-              top: 352,
-              left: 20,
-              right: 20,
+              top: 352.h,
+              left: 20.w,
+              right: 20.w,
               child: Obx(() {
                 return CustomPasswordfield(
                   prefixIcon: Icon(
@@ -106,26 +106,26 @@ class LoginScreen extends StatelessWidget {
                 );
               })),
           Positioned(
-              top: 439,
-              left: 219,
+              top: 439.h,
+              left: 208.w,
               child: TextButton(
                   onPressed: () {},
                   child: Text(
                     'Forgot Password?',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                         color: secondarycolor),
                   ))),
           Positioned(
-              top: 493,
-              left: 28,
-              child: LoginScreenButtons( 
+              top: 493.h,
+              left: 20.w,
+              child: LoginScreenButtons(
                 title: 'Login',
               )),
           Positioned(
-              top: 662,
-              left: 99,
+              top: 632.h,
+              left: 95.w,
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -133,30 +133,30 @@ class LoginScreen extends StatelessWidget {
                   Text(
                     'Dont have an account?',
                     style: TextStyle(
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                         color: headlinecolor),
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.to(() => SignupWithOtpScreen());
+                       Get.toNamed(Routes.OTPSCREEN);
                       },
                       child: Text(
                         'SignUp',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 13.sp,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.bold),
                       ))
                 ],
               )),
           Positioned(
-              top: 668,
-              left: -0.64,
+              top: 618.h,
+              left: -0.60.w,
               child: Container(
                 width: 82.64.h,
                 height: 118.h,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(kLoginPrimary), fit: BoxFit.cover)),
               ))

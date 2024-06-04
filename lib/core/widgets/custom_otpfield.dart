@@ -11,12 +11,12 @@ class CustomOtpField extends StatelessWidget {
     return  OtpTextField(
       cursorColor: headlinecolor,
       focusedBorderColor: secondarycolor,
-                        numberOfFields: 6,
+                        numberOfFields: 6, 
                         fieldHeight: 50.h,
                         borderRadius: BorderRadius.circular(6.r),
                         enabledBorderColor: secondarycolor,
                         showFieldAsBox: true,
-                        fieldWidth: 53.w,
+                        fieldWidth: 45.w,
                       );
   }
 }

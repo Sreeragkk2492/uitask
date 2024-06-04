@@ -21,11 +21,11 @@ class SignUpScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            padding:  EdgeInsets.only(left: 20.w, right: 20.w), 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                kHeight50,
+                kHeight20,
                 Text(
                   'SignUp',
                   style: TextStyle(
@@ -33,21 +33,19 @@ class SignUpScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color: secondarycolor),
                 ),
-                SizedBox(
-                  height: 25.h,
-                ),
+                kHeight20,
                 LabelTextwidget(title: 'Full Name'),
                 kHeight10,
                 CustomTextfield(
                   hintText: 'Name',
                 ),
-                kHeight15,
+                kHeight10,
                 LabelTextwidget(title: 'Username'),
                 kHeight10,
                 CustomTextfield(
                   hintText: 'Username',
                 ),
-                kHeight15,
+                kHeight10,
                 LabelTextwidget(title: 'Phone number'),
                 kHeight10,
                 CustomTextfield(
@@ -61,15 +59,17 @@ class SignUpScreen extends StatelessWidget {
                     hintText: 'Create password',
                     obscureText: !controller.isCreatePassvisible.value,
                     suffixbutton: IconButton(
-                        onPressed: () {
-                          controller.displayCratepassword();
-                        },
-                        icon: Icon(controller.isCreatePassvisible.value
-                            ? Icons.visibility
-                            : Icons.visibility_off),color: secondarycolor,), 
+                      onPressed: () {
+                        controller.displayCratepassword();
+                      },
+                      icon: Icon(controller.isCreatePassvisible.value
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      color: secondarycolor,
+                    ),
                   );
                 }),
-                kHeight15,
+                kHeight10,
                 LabelTextwidget(title: 'Confirm password'),
                 kHeight10,
                 Obx(() {
@@ -77,16 +77,18 @@ class SignUpScreen extends StatelessWidget {
                     hintText: 'Confirm password',
                     obscureText: !controller.isConfirmPassvisible.value,
                     suffixbutton: IconButton(
-                        onPressed: () {
-                          controller.displayConfirmpassword();
-                        },
-                        icon: Icon(controller.isConfirmPassvisible.value
-                            ? Icons.visibility
-                            : Icons.visibility_off),color: secondarycolor,),
+                      onPressed: () {
+                        controller.displayConfirmpassword();
+                      },
+                      icon: Icon(controller.isConfirmPassvisible.value
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      color: secondarycolor,
+                    ),
                   );
                 }),
-                kHeight55,
-                SignScreenButton() 
+                kHeight50,
+                SignUpScreenButton()
               ],
             ),
           ),
