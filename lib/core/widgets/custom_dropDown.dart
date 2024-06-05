@@ -4,6 +4,8 @@ import 'package:uitask/core/constants/colors.dart';
 import 'package:uitask/core/constants/country_code.dart';
 
 class CustomDropdownwidget extends StatefulWidget {
+   const CustomDropdownwidget({super.key}); 
+
   @override
   State<CustomDropdownwidget> createState() => _DropdownwidgetState();
 }
@@ -20,7 +22,7 @@ class _DropdownwidgetState extends State<CustomDropdownwidget> {
               side: BorderSide(color: secondarycolor),
               borderRadius: BorderRadius.circular(10.r))),
       child: DropdownButton(
-        underline: SizedBox(),
+        underline:const SizedBox(),
         iconEnabledColor: secondarycolor,
         isDense: true,
         isExpanded: true,
@@ -28,7 +30,6 @@ class _DropdownwidgetState extends State<CustomDropdownwidget> {
 
         padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 5.w),
         focusColor: Colors.transparent,
-        // dropdownColor: Colors.transparent,
         value: dropdownvalue,
         items: list.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(

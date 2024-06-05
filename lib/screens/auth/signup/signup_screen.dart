@@ -36,19 +36,19 @@ class SignUpScreen extends StatelessWidget {
                 kHeight20,
                 LabelTextwidget(title: 'Full Name'),
                 kHeight10,
-                CustomTextfield(
+              const  CustomTextfield(
                   hintText: 'Name',
                 ),
                 kHeight10,
                 LabelTextwidget(title: 'Username'),
                 kHeight10,
-                CustomTextfield(
+              const  CustomTextfield(
                   hintText: 'Username',
                 ),
                 kHeight10,
                 LabelTextwidget(title: 'Phone number'),
                 kHeight10,
-                CustomTextfield(
+              const  CustomTextfield(
                   hintText: 'Phonenumber',
                 ),
                 kHeight20,
@@ -88,7 +88,7 @@ class SignUpScreen extends StatelessWidget {
                   );
                 }),
                 kHeight50,
-                SignUpScreenButton()
+               const SignUpScreenButton()
               ],
             ),
           ),

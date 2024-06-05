@@ -8,21 +8,16 @@ import 'package:uitask/core/widgets/custom_otpfield.dart';
 import 'package:uitask/routes/routes.dart';
 import 'package:uitask/screens/auth/signupwithotp/widgets/otp_button.dart';
 import 'package:uitask/screens/auth/signupwithotp/widgets/otp_textfield.dart';
-import 'package:uitask/screens/auth/signup/signup_screen.dart';
 
-class SignupWithOtpScreen extends StatefulWidget {
-  @override
-  State<SignupWithOtpScreen> createState() => _SignupWithOtpState();
-}
+class SignupWithOtpScreen extends StatelessWidget {
+  const SignupWithOtpScreen({super.key});
 
-class _SignupWithOtpState extends State<SignupWithOtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
             child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             kHeight90,
             Row(
@@ -38,7 +33,7 @@ class _SignupWithOtpState extends State<SignupWithOtpScreen> {
                           fontWeight: FontWeight.w400,
                           color: headlinecolor),
                     ),
-                    CustomDropdownwidget(),
+                    const CustomDropdownwidget(),
                   ],
                 ),
                 kWidth20,
@@ -52,7 +47,7 @@ class _SignupWithOtpState extends State<SignupWithOtpScreen> {
                           fontWeight: FontWeight.w400,
                           color: headlinecolor),
                     ),
-                    OtpTextfieldwidget(),
+                    const OtpTextfieldwidget(),
                   ],
                 )
               ],
@@ -78,7 +73,7 @@ class _SignupWithOtpState extends State<SignupWithOtpScreen> {
                             color: headlinecolor),
                       ),
                       kHeight20,
-                      CustomOtpField(),
+                      const CustomOtpField(),
                     ],
                   ),
                 )

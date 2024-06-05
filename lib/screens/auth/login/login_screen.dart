@@ -3,26 +3,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:uitask/core/constants/colors.dart';
 import 'package:uitask/core/constants/strings.dart';
+import 'package:uitask/core/view_models/reponsive.dart';
 import 'package:uitask/core/widgets/custom_passwordfield.dart';
 import 'package:uitask/core/widgets/custom_textfield.dart';
 import 'package:uitask/routes/routes.dart';
 import 'package:uitask/screens/auth/controller/auth_controller.dart';
-import 'package:uitask/screens/auth/signupwithotp/signup_otp_screen.dart';
-
 import 'package:uitask/screens/auth/login/widgets/login_screen_button.dart';
 
 class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
+
   final controller = Get.put(Authcontroller());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primarycolor,
-      // appBar: AppBar(backgroundColor: Appcolor.primarycolor,),
       body: Stack(
         children: [
           Positioned(
-              top: 32.h,
-              left: 270.w,
+              top:3.h,
+              left:Responsive.isMobile(context)? 270.w:400.w,
               child: Container(
                 width: 93.32.w,
                 height: 149.h,
@@ -119,15 +119,14 @@ class LoginScreen extends StatelessWidget {
                   ))),
           Positioned(
               top: 493.h,
-              left: 20.w,
-              child: LoginScreenButtons(
+              left:10.w,  
+              child:const LoginScreenButtons(
                 title: 'Login',
               )),
           Positioned(
               top: 632.h,
               left: 95.w,
               child: Row(
-                // mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
@@ -137,9 +136,9 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         color: headlinecolor),
                   ),
-                  TextButton(
-                      onPressed: () {
-                       Get.toNamed(Routes.OTPSCREEN);
+                  GestureDetector(
+                      onTap: () {
+                        Get.toNamed(Routes.OTPSCREEN);
                       },
                       child: Text(
                         'SignUp',
